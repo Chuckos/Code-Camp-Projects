@@ -3,7 +3,7 @@
  */
 
 
-/*
+/* Challenge
  *
  * Return true if the given string is a palindrome. Otherwise, return false.
  * A palindrome is a word or sentence that's spelled the same way both forward and backward,
@@ -13,20 +13,24 @@
 
 function palindrome(str) {
 
-    //create variable array
+    //variable to capture string into array.
     var backwardsString;
 
-    //remove special characters from star
-    var cleanString = str.replace(/[^a-z]+/g, "");
+    //Turn string into lowercase
+    var lowerCase = str.toLowerCase();
 
-    //split the word into array, reverse word and the covert into string
+    //remove special characters from string using regular expressions 101
+    var cleanString = lowerCase.replace(/[^a-z\d]+/g, "");
+
+    //split the string into array, reverse array and the convert back into string
     backwardsString = cleanString.split("").reverse().join('');
 
+    //print out string
     console.log(backwardsString);
 
-    //remove special characters from star
 
 
+    // compare clean string against backwards clean string.
     if (cleanString === backwardsString)
     {return true; }
     else {
@@ -37,10 +41,10 @@ function palindrome(str) {
 
 
 
-//palindrome("eye"); //true
+palindrome("eye"); //true
 palindrome("_eye"); // true
 palindrome("race car"); // true
-/*palindrome("not a palindrome"); // false
+palindrome("not a palindrome"); // false
 palindrome("A man, a plan, a canal. Panama"); // true
 palindrome("never odd or even"); // true
 palindrome("nope"); //false
@@ -48,4 +52,4 @@ palindrome("almostomla"); //false
 palindrome("My age is 0, 0 si ega ym."); //true
 palindrome("1 eye for of 1 eye."); //false
 palindrome("0_0 (: /-\ :) 0-0"); //true
-palindrome("five|\_/|four"); //false*/
+palindrome("five|\_/|four"); //false
