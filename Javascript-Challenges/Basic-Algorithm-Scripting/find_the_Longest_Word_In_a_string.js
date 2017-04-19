@@ -9,8 +9,8 @@
  *
  */
 
-// 1st Draft
-function findLongestWord(str) {
+// 1st First Attempt
+/*function findLongestWord(str) {
 
     var wordArray;
     var numberArray = [];
@@ -41,9 +41,29 @@ function findLongestWord(str) {
     str = largestNumber;
 
     return str;
+}*/
+
+
+// 2nd Attempt - Refactored, less code
+function findLongestWord(str) {
+
+    var wordArray;
+    var largestNumber = 0;
+
+    //Split received words into an array
+    wordArray = str.split(" ");
+
+    //Count and store each word length in a new array.
+    for (i = 0; i < wordArray.length; i++) {
+        if (wordArray[i].length > largestNumber) {
+            largestNumber = wordArray[i].length;
+        }
+    }
+    return largestNumber;
 }
 
-findLongestWord("The quick brown fox jumped over the lazy dog");
+
+
 findLongestWord("The quick brown fox jumped over the lazy dog");
 findLongestWord("May the force be with you");
 findLongestWord("Google do a barrel roll");
