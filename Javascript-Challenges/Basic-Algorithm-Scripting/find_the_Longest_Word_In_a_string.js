@@ -45,7 +45,7 @@
 
 
 // 2nd Attempt - Refactored, less code
-function findLongestWord(str) {
+/*function findLongestWord(str) {
 
     var wordArray;
     var largestNumber = 0;
@@ -60,8 +60,28 @@ function findLongestWord(str) {
         }
     }
     return largestNumber;
-}
+}*/
 
+// 3rd attempt - refactored code using function maths max
+function findLongestWord(str) {
+
+    var wordArray;
+    var numberArray =[];
+    var largestNumber;
+
+    //Split received words into an array
+    wordArray = str.split(" ");
+
+    //Count and store each word length in a new array.
+    for (i = 0; i < wordArray.length; i++) {
+        var test = wordArray[i].length;
+        numberArray.push(test);
+    }
+
+    //Count and store each word length in a new array.
+    largestNumber = Math.max.apply(null, numberArray);
+    return largestNumber;
+}
 
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
