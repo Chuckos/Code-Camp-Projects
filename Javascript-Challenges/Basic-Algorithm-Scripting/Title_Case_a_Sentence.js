@@ -12,55 +12,57 @@
  *
  */
 
-// Using split function to complete challenge
-
-/*function titleCase(str) {
-
-    //1. make string all lower case
-    var sentence = str.toLowerCase();
-
-
-    //2. split string into an array
-    //var sentence1 = sentence.split('');
-    //console.log(sentence1);
-
-    var sentence1 = sentence.replace(/\b(\w)/g,"").toUpperCase();
-    console.log(sentence1);
-
-
-    //3 .iterate through array
-    /!*for (i = 0; i < sentence1.length; i++) {
-        console.log(sentence1[i]);
-    }*!/
-
-
-    //4. make first letter of each word capital (charAT).
-
-
-    //5. covert back to string with spaces
-
-    //6. return string.
-
-
-
-    return str;
-}*/
-
-
-// Using Regular Expression function to complete challenge
-
+// Using .split function to complete challenge
 function titleCase(str) {
 
-    //regex to find first letter in each work.
-    var capWords = str.toLowerCase().replace(/(^|\s)[a-z]/g, function(upperCase){return upperCase.toUpperCase();});
+    // Make strings all lowercase and store words into an array
+    var sentence = str
+        .toLowerCase()
+        .split(' ');
 
-    console.log(capWords);
+    // Iterate through array and capitalise first letter of word.
+    for (i = 0; i < sentence.length; i++) {
+
+        //split individual word into another array
+        sentence[i] = sentence[i].split('');
+
+        // Get first letter back from array and turn into capital
+        sentence[i][0] = sentence[i][0].toUpperCase();
+
+        // flip array word back into string into original array.
+        sentence[i] = sentence[i].join('');
+    }
+
+    // flip array back to string with spaces between words.
+    str = sentence.join(' ');
+
+    console.log(str + " using split function");
+
+    return str;
+}
+
+
+
+// Using Regular Expression to complete challenge
+function titleCaseR(str) {
+
+    //regex to find first letter in each work.
+    var capWords = str
+        .toLowerCase()
+        .replace(/(^|\s)[a-z]/g, function(upperCase) {return upperCase.toUpperCase();});
+
+    console.log(capWords + " using regular expression");
 
     return capWords;
 }
 
 
-
+// testing function with split function
 titleCase("I'm a little tea pot");
 titleCase("sHoRt AnD sToUt");
 titleCase("HERE IS MY HANDLE HERE IS MY SPOUT");
+
+// testing function with regular expression
+titleCaseR("I'm a little tea pot");
+titleCaseR("sHoRt AnD sToUt");
+titleCaseR("HERE IS MY HANDLE HERE IS MY SPOUT");
