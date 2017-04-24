@@ -12,26 +12,43 @@
 
 
 function truncateString(str, num) {
-    // Clear out that junk in your trunk
 
-    //count string length of str
+    // count str length
+    var strLength = str.length;
 
-    // if num is <= 3 then do then add three dots on top of maximum
+    // ensure I got the number index to slice from and include ... in num number
+    var numLength = num - 3;
 
-    // else continue with the main task
+    // number to compare string length
+    var magicNumber = 3;
 
+    // checks if num is less than or equal to 3
+    if (num <= magicNumber) {
 
+        // cuts words by num value and adds ...
+        var shortWord = str.slice(0, num) + "...";
 
-    // if str is bigger than num
-    // do trim str by num number - 3. //use substring here
-    // Also concat...
-    // return string
+        return shortWord;
 
-    //if not bigger then reutrn original string.
+    } else {
 
+        // checks if string length is greater than num
+        if (strLength > num) {
 
+            // cuts words by num length value and adds ...
+            var placeHolder = str.substring(0, numLength) + "...";
 
-    return str;
+            return placeHolder;
+
+        } else {
+
+            //if string length is not bigger than num then original string is returned.
+            return str;
+
+        }
+
+    }
+
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 11);   //should return "A-tisket...".
