@@ -13,15 +13,26 @@
 
 
 function mutation(arr) {
-
-    // split array into two strings
-
-    // check 2nd string against 1st string using index.
-
-    // return true or false value.
-
-    return arr;
+    var test = arr[1].toLowerCase();
+    var target = arr[0].toLowerCase();
+    for (i=0;i<test.length;i++) {
+        if (target.indexOf(test[i]) < 0)
+            return false;
+    }
+    return true;
 }
+
+
+/*
+function mutation(arr) {
+    return arr[1].toLowerCase()
+        .split('')
+        .every(function(letter) {
+            return arr[0].toLowerCase()
+                    .indexOf(letter) != -1;
+        });
+}
+*/
 
 mutation(["hello", "hey"]);                            // should return false.
 mutation(["hello", "Hello"]);                          // should return true.
