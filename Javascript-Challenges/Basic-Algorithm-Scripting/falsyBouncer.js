@@ -8,17 +8,26 @@
 
 
 function bouncer(arr) {
-    // Don't show a false ID to this bouncer.
 
-    // loop through array.
-    // compare against a falsy value.
-    // if match remove from array
-    // return array will only no-matched items
+    // function to return only true variables
+    function isTruthy(obj){
+        return Boolean(obj);
+    }
 
+    // filters through array and filters out falsy variables
+    var filteredArray = arr.filter(isTruthy);
 
-    return arr;
+    // return true variables
+    return filteredArray;
 }
 
+/*
+
+// advanced way to solve problem.
+function bouncer(arr) {
+    return arr.filter(Boolean);
+}
+*/
 
 bouncer([7, "ate", "", false, 9]);                  //should return [7, "ate", 9].
 bouncer(["a", "b", "c"]);                           // should return ["a", "b", "c"].
