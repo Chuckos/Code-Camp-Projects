@@ -3,6 +3,6 @@
 I completed the following projects (see below) using the following technologies HTML, CSS And Bootstrap.
 
 * Build a Tribute Page
-* Buiild a Personal Protfolio Webage
+* Buiild a Personal Portfolio Webage
 
  
