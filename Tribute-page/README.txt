@@ -1,3 +1,8 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/chuckos/pen/dNeYWv.
+## Basic Front End Development Projects
+
+I completed the following projects (see below) using the following technologies HTML, CSS And Bootstrap.
+
+* Build a Tribute Page
+* Buiild a Personal Protfolio Webage
 
  
