@@ -10,8 +10,11 @@
  * ignoring punctuation, case, and spacing.
  */
 
+/*
+ * My solution
+ * */
 
-function palindrome(str) {
+/*function palindrome(str) {
 
     //variable to capture string into array.
     var backwardsString;
@@ -37,9 +40,22 @@ function palindrome(str) {
      return false;
 }
 
+}*/
+
+/*
+* Intermediate solution
+* */
+
+function palindrome(str) {
+    str = str.toLowerCase().replace(/[\W_]/g, '');
+    for(var i= 0, len = str.length - 1; i < len/2; i++){
+        console.log(str);
+        if(str[i] !== str[len-i]){
+            return false;
+        }
+    }
+    return true;
 }
-
-
 
 palindrome("eye"); //true
 palindrome("_eye"); // true
