@@ -56,6 +56,19 @@ function titleCaseR(str) {
     return capWords;
 }
 
+// Using map() Method
+function titleCase(str) {
+    return str.toLowerCase().split(' ').map(function(word){
+        return (word.charAt(0).toUpperCase() + word.slice(1));
+    }).join(' ');
+}
+
+// map() and the replace() Methods
+function titleCase(str) {
+    return str.toLowerCase().split(' ').map(function(word){
+        return word.replace(word[0], word[0].toUpperCase());
+    }).join(' ');
+}
 
 // testing function with split function
 titleCase("I'm a little tea pot");
