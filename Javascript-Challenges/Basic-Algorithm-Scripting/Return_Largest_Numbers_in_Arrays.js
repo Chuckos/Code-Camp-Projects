@@ -37,12 +37,18 @@
     return arr;
 }*/
 
-function largestOfFour(mainArray){
+/*function largestOfFour(mainArray){
     return mainArray.map(function (subArray){
         return subArray.reduce(function (previousLargestNumber, currentLargestNumber){
            return (currentLargestNumber > previousLargestNumber) ? currentLargestNumber : previousLargestNumber;
         }, 0);
 
+    });
+}*/
+
+function largestOfFour(mainArray) {
+    return mainArray.map(function(subArray) {
+        return Math.max.apply(null, subArray);
     });
 }
 
